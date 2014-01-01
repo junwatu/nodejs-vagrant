@@ -1,0 +1,31 @@
+#!/bin/sh
+#/etc/init.d/cloud9
+
+export PATH=$PATH:/usr/bin
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+export NODE_APP=/home/vagrant/cloud9
+export DEF_DIR=/home/vagrant/www
+
+export PORT=3131
+export IP=0.0.0.0
+
+case "$1" in
+  start)
+  forever start --sourceDir=$NODE_APP -p /etc/cloud9.pid -al /var/log/forever-c9.log  -o /var/log/forever-c9-out.log -e /var/log/forever-c9-err.log server.js -w $DEF_DIR
+  ;;
+  restart)
+  forever restart server.js
+  ;;
+  stop)
+  forever stop --sourceDir=$NODE_APP server.js
+  ;;
+  status)
+  forever list
+  ;;
+*)
+  echo "Usage: /etc/init.d/cloud9 {start|status|stop}"
+  exit 1
+  ;;
+esac
+
+exit 0
