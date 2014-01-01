@@ -76,15 +76,6 @@ if [ ! -f nodejs ]; then
 fi
 
 #***************************
-# Cleanup
-#***************************
-cd ~
-
-sudo rm -Rvf node-v$NODE_VERSION
-rm -f node-v$NODE_VERSION.tar.gz
-sudo apt-get remove -y build-essential
-
-#***************************
 # Start services
 #***************************
 
@@ -109,3 +100,44 @@ printf "Node $(node --version)\\n\\n"\
 printf "MongoDB $(mongod --version)\\n\\n"\
 printf "$(mongo --version)\\n\\n"\
 printf "========================\\n"'  /etc/update-motd.d/00-header
+
+
+#***********************************
+# Cloud9 IDE
+# NOTE: 
+# It install from repository 
+# https://github.com/junwatu/cloud9
+# 
+#***********************************
+
+git clone https://github.com/junwatu/cloud9
+cd cloud9
+
+# Depends on your system andn internet connection
+# it takes time to build Cloud9 IDE deps
+
+sudo npm install -g node-gyp
+
+mkdir node_modules
+cd node_modules
+git clone https://github.com/junwatu/node-libxml.git node-libxml
+cd libxml
+./build.sh
+
+cd ../../
+npm install
+
+npm install jsDAV
+
+
+#***************************
+# Cleanup
+#***************************
+cd ~
+
+sudo rm -Rvf node-v$NODE_VERSION
+rm -f node-v$NODE_VERSION.tar.gz
+sudo apt-get remove -y build-essential
+
+sudo rm -Rvf .npm
+sudo rm -Rvf tmp
