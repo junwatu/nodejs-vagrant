@@ -41,12 +41,16 @@ and if everything good there will be welcome screen like this one
     vagrant@precise32:~$
     
     
+Usage 
+-----
+
+> TODO
+
 
 Internal
 --------
 
 > NOTE: This processes automatically running by bootstrap.sh script so you don't need to do this manually.
-
 
 
 
@@ -59,21 +63,21 @@ Create service file for Node Forever
 Run forever at startup 
 ----------------------
 	
-	to enable at startup
+To enable at startup
 
-    $ update-rc.d nodejs defaults
+    $ sudo update-rc.d nodejs defaults
 	
-	to remove from startup
+To remove from startup
 
-	update-rc.d nodejs remove
+	$ sudo update-rc.d nodejs remove
 
 
 Port forwading
 --------------
 
-Node.js app port forwading 80 -> 8085
+Node.js app port forwading from port 80 to port 8085
 
-Mongodb port forwading 27017 -> 27117
+Mongodb port forwading from port 27017 to port 27117
 
 
 Setup MongoDB
