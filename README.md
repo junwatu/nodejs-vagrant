@@ -3,10 +3,22 @@ Vagrant Node.js + MongoDB + Cloud9 IDE Setup
 
 Vagrant files to build Node.js box with MongoDB and Cloud9 IDE on Precise32 box based.
 
+Installation
+-------------
+
+Install Vagrant from http://www.vagrantup.com/downloads.html
+
+Type vagrant command to setup vagrant box
+
+$ vagrant up
 
 
 Internal
 --------
+
+NOTE : This processes automatically running by bootstrap.sh script so you don't need
+to do this manually.
+
 
 Create service file for Node Forever
 -----------------------------------
