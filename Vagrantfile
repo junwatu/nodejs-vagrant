@@ -12,6 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 27017, host: 27117
   config.vm.network :forwarded_port, guest: 3131, host: 3131, auto_correct: true
 
+  config.vm.synced_folder "../sync/www", "/home/vagrant/www", create: true
+
   #config.ssh.timeout = 60
 
   config.vm.provision :shell, :path => "bootstrap.sh"
