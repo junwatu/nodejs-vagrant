@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :forwarded_port, guest: 80, host: 8085, auto_correct: true
   config.vm.network :forwarded_port, guest: 27017, host: 27117
-  config.vm.network :forwarded_port, guest: 3131, host: 3131
+  config.vm.network :forwarded_port, guest: 3131, host: 3131, auto_correct: true
 
   #config.ssh.timeout = 60
 
