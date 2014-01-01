@@ -10,14 +10,17 @@ Install Vagrant from http://www.vagrantup.com/downloads.html
 
 Type vagrant command to setup vagrant box
 
-$ vagrant up
+    $ vagrant up
+
+> NOTE: Cloud9 IDE auto install script still on progress 
 
 
 Internal
 --------
 
-NOTE : This processes automatically running by bootstrap.sh script so you don't need
-to do this manually.
+> NOTE: This processes automatically running by bootstrap.sh script so you don't need to do this manually.
+
+
 
 
 Create service file for Node Forever
