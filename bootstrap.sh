@@ -96,3 +96,16 @@ sudo /etc/init.d/nodejs restart
 #
 sudo service mongodb restart
 
+#***************************
+# Change Welcome Screen
+#***************************
+
+sudo sed -i '$a\
+printf "\\n"\
+printf "========================\\n"\
+printf "System Info\\n"\
+printf "========================\\n"\
+printf "Node $(node --version)\\n\\n"\
+printf "MongoDB $(mongod --version)\\n\\n"\
+printf "$(mongo --version)\\n\\n"\
+printf "========================\\n"'  /etc/update-motd.d/00-header
