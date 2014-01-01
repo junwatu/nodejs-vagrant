@@ -14,6 +14,33 @@ Type vagrant command to setup vagrant box
 
 > NOTE: Cloud9 IDE auto install script still on progress 
 
+To access vagrant box type
+
+    $ vagrant ssh
+    
+and if everything good there will be welcome screen like this one
+
+    Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+
+    ========================
+    System Info
+    ========================
+    Node v0.10.24
+    
+    MongoDB db version v2.0.4, pdfile version 4.5
+    Wed Jan  1 04:55:33 git version: nogitversion
+    
+    MongoDB shell version: 2.0.4
+    
+    ========================
+    
+     * Documentation:  https://help.ubuntu.com/
+    Welcome to your Vagrant-built virtual machine.
+    Last login: Wed Jan  1 04:54:56 2014 from 10.0.2.2
+
+    vagrant@precise32:~$
+    
+    
 
 Internal
 --------
@@ -64,4 +91,4 @@ restart mongodb
 Change Welcome Screen
 ---------------------
 
-$ sudo vim /etc/update-motd.d/00-header
+    $ sudo vim /etc/update-motd.d/00-header
