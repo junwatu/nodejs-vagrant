@@ -1,0 +1,31 @@
+#!/bin/sh
+#/etc/init.d/nodejs
+
+export PATH=$PATH:/usr/bin
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+export NODE_APP=/home/vagrant/www
+
+#
+export PORT=80
+export NODE_ENV="production"
+
+case "$1" in
+  start)
+  forever start --sourceDir=$NODE_APP -p /etc/nodejs.pid -al /var/log/forever.log  -o /var/log/forever-out.log -e /var/log/forever-err.log server.js
+  ;;
+  restart)
+  forever restart server.js
+  ;;
+  stop)
+  forever stop --sourceDir=$NODE_APP server.js
+  ;;
+  status)
+  forever list
+  ;;
+*)
+  echo "Usage: /etc/init.d/nodejs {start|status|stop}"
+  exit 1
+  ;;
+esac
+
+exit 0
