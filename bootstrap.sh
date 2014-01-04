@@ -10,6 +10,7 @@ NODE_VERSION=0.10.24
 #*******************************************************************************
 REPOSITORY_WWW="https://github.com/junwatu/nodejs-express-mongodb-start.git"
 WEB_DIR="~/www"
+HOME="/home/vagrant"
 
 PROV_FILE=.vagrant_provision.lock
 
@@ -59,8 +60,8 @@ git clone $REPOSITORY_WWW  $WEB_DIR
 cd $WEB_DIR
 
 # Clean up
-sudo rm -Rvf ../.npm
-sudo rm -Rvf ../tmp
+sudo rm -Rvf $HOME/.npm
+sudo rm -Rvf $HOME/tmp
 
 sudo chown -Rf vagrant.vagrant $WEB_DIR
 
@@ -124,7 +125,7 @@ git clone https://github.com/junwatu/node-libxml.git node-libxml
 cd libxml
 ./build.sh
 
-cd ../../
+cd $HOME/cloud9
 npm install
 
 npm install jsDAV
@@ -148,11 +149,11 @@ sudo /etc/init.d/cloud9 start
 #***************************
 # Cleanup
 #***************************
-cd ~
+cd $HOME
 
 sudo rm -Rvf node-v$NODE_VERSION
 rm -f node-v$NODE_VERSION.tar.gz
 sudo apt-get remove -y build-essential
+sudo rm -Rvf $HOME/.npm
+sudo rm -Rvf $HOME/tmp
 
-sudo rm -Rvf .npm
-sudo rm -Rvf tmp
