@@ -57,14 +57,13 @@ if [! -f $WEB_DIR ]; then
 fi
 git clone $REPOSITORY_WWW  $WEB_DIR
 
-cd $WEB_DIR
-
 # Clean up
 sudo rm -Rvf $HOME/.npm
 sudo rm -Rvf $HOME/tmp
 
 sudo chown -Rf vagrant.vagrant $WEB_DIR
 
+cd $WEB_DIR
 npm install
 
 # Run forever at startup
@@ -83,9 +82,9 @@ fi
 # Node.js
 sudo /etc/init.d/nodejs restart
 
-# TODO
-# uncomment bind_ip  on /etc/mongodb.conf
-#
+# Find and replace bind_ip to 0.0.0.0 on /etc/mongodb.conf
+sudo sed -i 's/^.*bind_ip .*$/bind_ip\ =\ 0.0.0.0/' /etc/mongodb.conf
+
 sudo service mongodb restart
 
 #***************************
