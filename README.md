@@ -6,6 +6,10 @@ Vagrant files to build Node.js box with MongoDB and Cloud9 IDE on Precise32 box 
 Installation
 -------------
 
+Clone this repository
+
+    git clone git@github.com:junwatu/nodejs-vagrant.git
+    
 Install Vagrant from http://www.vagrantup.com/downloads.html
 
 Type vagrant command to setup vagrant box
