@@ -70,7 +70,7 @@ npm install
 cd /etc/init.d
 
 if [ ! -f nodejs ]; then
-    sudo wget https://s3-ap-southeast-1.amazonaws.com/junwatu/files/vagrant/nodejs/nodejs
+    sudo wget https://raw.githubusercontent.com/junwatu/nodejs-vagrant/master/scripts/nodejs
     sudo chmod 755 nodejs
     sudo update-rc.d nodejs defaults
 fi
@@ -132,7 +132,7 @@ npm install jsDAV
 cd /etc/init.d
 
 if [ ! -f cloud9 ]; then
-    sudo wget https://s3-ap-southeast-1.amazonaws.com/junwatu/files/vagrant/nodejs/scripts/cloud9
+    sudo wget https://raw.githubusercontent.com/junwatu/nodejs-vagrant/master/scripts/cloud9
     sudo chmod 755 cloud9
     sudo update-rc.d cloud9 defaults
 fi
